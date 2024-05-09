@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Management App</title>
+</head>
+<body>
+
+<h1>Notes Management App</h1>
+
+<div class="app-container">
+@if(this.index >= 0 ){
+  {{this.index +1}}
+}
+@if (requiredLenght == false) {
+  <br>
+Title <br>
+<input [(ngModel)]="modelTitle" placeholder="Enter note title" style="border: red solid;"><br>
+Content
+<textarea [(ngModel)]="modelContent" placeholder="Enter note content" style="border: red solid;"></textarea>
+<p *ngIf="!requiredLenght" class="error-message">Title and content must be at least 5 and 7 characters long, respectively.</p>
+<br>
+}
+
+@else {
+Title <br>
+<input [(ngModel)]="modelTitle" placeholder="Enter note title"><br>
+Content
+<textarea [(ngModel)]="modelContent" placeholder="Enter note content"></textarea>
+<br> 
+}
+<button (click)="newNote()">Add Note</button>
+<button (click)="saveNote()">Save Note</button>
+
+</div>
+<div>All notes</div>
+@for (item of Notes; track $index) {
+  <div (click)="selectNote($index)" class="item">
+    <div><h3>{{ item.Title }}</h3></div>
+    <div><p>{{ item.Content }}</p></div>
+
+    @if (this.selectedNote == $index) {
+      <div>
+        <button (click)="editNote($index)">Edit</button>
+        <button (click)="deleteNote($index)">Delete</button>
+      </div>
+    }
+  </div>
+}
+
+</body>
+</html>
