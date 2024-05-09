@@ -36,7 +36,7 @@ Content
 </div>
 <div>All notes</div>
 @for (item of Notes; track $index) {
-  <div (click)="selectNote($index)" class="item">
+  <div (click)="selectNote($index)" class="sticky-note animated-sticky-note">
     <div><h3>{{ item.Title }}</h3></div>
     <div><p>{{ item.Content }}</p></div>
 
