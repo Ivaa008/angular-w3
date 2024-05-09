@@ -1,3 +1,26 @@
+/* latin-ext */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Reenie Beanie';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/reeniebeanie/v20/z7NSdR76eDkaJKZJFkkjuvWxXPq1qw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
 /* Reset default styles */
 * {
     margin: 0;
@@ -7,9 +30,14 @@
 
 /* Body styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
+    margin: 20px auto;
+  font-family: 'Lato';
 }
+h3 {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
 
 /* Container for notes */
 .app-container {
@@ -49,47 +77,10 @@ button:hover {
 }
 
 .sticky-note {
-    background-color: #feff9c;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    font-family: Arial, sans-serif;
-}
-
-.animated-sticky-note {
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    font-family: Arial, sans-serif;
-    transition: transform 0.2s ease;
-}
-
-.animated-sticky-note:hover {
-    transform: scale(1.05);
-}
-
-/* Notes list */
-/* .item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-}
-
-html { height: 100%; }
-    body {
-        background-color: #f5f5f5;
-    }
-    textarea {
-        border: 1px solid #EEEEEE;
+    border: 1px solid #EEEEEE;
         box-shadow: 1px 1px 0 #DDDDDD;
         display: block;
-        font-family: 'Marck Script', cursive;
+        font-family: 'Reenie Beanie', cursive;
         font-size: 22px;
         line-height: 50px;
         margin: 2% auto;
@@ -106,8 +97,29 @@ html { height: 100%; }
             -webkit-radial-gradient(4% 50%, circle closest-corner, #f5f5f5, #f5f5f5 39%, transparent 0%),
             -webkit-radial-gradient(3.9% 46%, circle closest-corner, #cccccc, #cccccc 43.5%, transparent 0%);
         background-size: 100% 50px;
-    } */
+        
+    height: 210px;
+    text-align: center;
+    background-color: #feff9c;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
 
+.animated-sticky-note {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: transform 0.2s ease;
+}
+
+.animated-sticky-note:hover {
+    transform: scale(1.05);
+}
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
