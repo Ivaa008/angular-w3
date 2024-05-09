@@ -31,7 +31,7 @@ export class AppComponent {
    * newNote
    */
   public newNote() {
-    if (this.modelTitle.length > 5 && this.modelContent.length > 7) {
+    if (this.modelTitle.length >= 5 && this.modelContent.length >= 7) {
         this.Notes.push({
           Title: this.modelTitle,
           Content: this.modelContent
@@ -47,7 +47,7 @@ export class AppComponent {
    * saveNote
    */
   public saveNote() {
-    if (this.modelTitle.length > 5 && this.modelContent.length > 7) {
+    if (this.modelTitle.length >= 5 && this.modelContent.length >= 7) {
         this.Notes[this.index].Title = this.modelTitle;
         this.Notes[this.index].Content = this.modelContent;
         this.reset;
